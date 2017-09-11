@@ -3,6 +3,7 @@ class Graph {
   constructor() {
     this.graph = {};
   }
+
   addNode(newNode, toNode) {
     this.graph[newNode] = {};
     this.graph[newNode].edges = [];
@@ -17,6 +18,7 @@ class Graph {
       this.graph[toNode].edges.push(newNode);
     }
   }
+
   contains(node) {
     let hasNode = false;
     Object.keys(this.graph).forEach(key => {
@@ -24,6 +26,7 @@ class Graph {
     });
     return hasNode;
   }
+
   removeNode(node) {
     delete this.graph[node];
     Object.keys(this.graph).forEach((key) => {
